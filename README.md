@@ -44,14 +44,16 @@ space-hackathon/
 
 1. Open terminal and navigate to backend folder:
 
-```bash
+```
 cd space-hackathon/backend
 python3 -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
 uvicorn main:app --reload --port 8000
+```
 
+```
 cd space-hackathon/frontend
 npm install
 npm run dev
