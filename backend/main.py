@@ -4,7 +4,10 @@ from pydantic import BaseModel
 import sqlite3, json, time
 
 app = FastAPI()
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware,allow_origins=["*"],  # or ["http://localhost:5173"] for your React frontend
+    allow_credentials=True,
+    allow_methods=["*"],   # <-- this allows POST, GET, OPTIONS, etc.
+    allow_headers=["*"],)
 
 DB = "annotations.db"
 

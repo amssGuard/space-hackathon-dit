@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.overlay-label {
+  position: absolute;
+  font-size: 14px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 0, 0.8);
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: black;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 10; /* ensures label is above tiles */
+}
+
