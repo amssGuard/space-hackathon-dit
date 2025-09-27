@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 uvicorn main:app --reload --port 8000
 ```
-
+2. Open terminal and navigate to frontend folder:
 ```
 cd space-hackathon/frontend
 npm install
