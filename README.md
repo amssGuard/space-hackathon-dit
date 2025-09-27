@@ -42,7 +42,7 @@ space-hackathon/
 
 ## Backend Setup (FastAPI + SQLite)
 
-1. Open terminal and navigate to backend folder:
+ Open terminal and navigate to backend folder:
 
 ```
 cd space-hackathon/backend
@@ -52,7 +52,9 @@ pip install -r requirements.txt
 
 uvicorn main:app --reload --port 8000
 ```
-2. Open terminal and navigate to frontend folder:
+
+## Frontend Setup (FastAPI + SQLite)
+ Open terminal and navigate to frontend folder:
 ```
 cd space-hackathon/frontend
 npm install
