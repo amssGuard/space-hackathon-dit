@@ -24,7 +24,7 @@ space-hackathon/
 │ │ └── components/
 │ │ └── OpenSeadragonViewer.jsx
 │ ├── public/
-│ │ └── tiles/ # Place DZI tiles here
+│ │ └── tiles/ 
 │ └── package.json
 │
 └── README.md
