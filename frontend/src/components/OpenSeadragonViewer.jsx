@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import OpenSeadragon from "openseadragon";
+import { useParams } from "react-router-dom";
 
 // Example React overlay component
 const OverlayLabel = ({ label, description, x, y, dziUrl }) => {
@@ -73,6 +74,7 @@ export default function OpenSeadragonViewer({ dziUrl }) {
     label: "",
     description: "",
   });
+   const {fileId} = useParams()
 
   useEffect(() => {
     if (!ref.current) return;
@@ -101,7 +103,7 @@ export default function OpenSeadragonViewer({ dziUrl }) {
 
     const loadAnnotations = async () => {
       try {
-        const res = await fetch(import.meta.env.VITE_OPNSEA_URL);
+        const res = await fetch(import.meta.env.VITE_OPNSEA_URL + `/${fileId}`);
         const data = await res.json();
         data.forEach((a) => addOverlay(a.geometry.x, a.geometry.y, a.label, a.description));
       } catch (err) {
@@ -141,7 +143,7 @@ export default function OpenSeadragonViewer({ dziUrl }) {
     if (!addCordData?.label || !addCordData?.description || !formPos) return;
 
     try {
-      await fetch(import.meta.env.VITE_OPNSEA_URL, {
+      await fetch(import.meta.env.VITE_OPNSEA_URL + `/${fileId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

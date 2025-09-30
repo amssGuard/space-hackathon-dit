@@ -1,14 +1,23 @@
-import OpenSeadragonViewer from "./components/OpenSeadragonViewer";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./components/pages/home";
+import Preview from "./components/pages/preview";
+// import Preview from "./components/pages/preview";
 
-export default function App(){
-	return (
-		<div className="App w-screen h-screen overflow-hidden flex p-0 m-0 flex-col">
-			<div className="h-16 shadow-sm w-full"></div>
-			<div className="grow fle bg-gray-500/70 p-0">
-				<OpenSeadragonViewer dziUrl="/tiles/bigimage.dzi"/>
+export default function App() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      {/* <Header /> */}
 
-			</div>
-		
-		</div>
-	);
+      <main className="p-0 m-0">
+        <Routes>
+          	<Route path="/" element={<Home />} />
+		    <Route path="/preview/:fileId" element={<Preview />} />
+
+
+
+        </Routes>
+      </main>
+
+    </div>
+  );
 }
