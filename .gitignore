@@ -1,2 +1,5 @@
 data/phat_IMG.tif
 data/*.tif
+.venv/*
+frontend/public/uploads
+backend/.venv/*
